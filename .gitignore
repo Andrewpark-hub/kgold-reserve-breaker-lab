@@ -1,0 +1,20 @@
+# Foundry
+/out/
+/cache/
+/broadcast/
+
+# 환경 변수
+.env
+.env.*
+!.env.example
+
+# 링크드인 초안
+linkedin_*.txt
+linkedin_*.md
+*.draft.md
+
+# OS
+.DS_Store
+
+# 개인 학습 노트
+study_notes*.md
