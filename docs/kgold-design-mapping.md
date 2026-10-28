@@ -14,7 +14,7 @@
 | 발행 관리자 | 총 발행량 ≤ 증명된 보관 중량 | ✅ `MintController.sol` |
 | 보유고 증명 | 검증 노드 n 개 중 m 개 이상 + 유효시간 내 서명 | ✅ `ReserveOracle.sol` (3-of-5, EIP-712) |
 | 회로차단기 | 감지 조건 4개 중 하나라도 충족 시 정지 | ✅ `CircuitBreaker.sol` |
-| 무역 에스크로 | 담보 잠금, 결재선 2-of-3 승인 시 정산, 기한 초과 시 환불 | ❌ 다음 과제 |
+| 무역 에스크로 | 담보 잠금, 결재선 2-of-3 승인 시 정산, 기한 초과 시 환불 | ➡️ 다음 저장소 [kgold-trade-escrow-lab](https://github.com/Andrewpark-hub/kgold-trade-escrow-lab) 에서 구현 (2026-10-28) |
 | 검증 노드 프로그램 | 각 노드가 금고 재고를 확인하고 서명 | ❌ 테스트에서 `vm.sign` 으로 대신함 |
 | 대시보드 | 기업 재무 담당자용 화면 | ❌ 범위 밖 |
 | MPC 지갑 · 계정 추상화 | 기업 내부 다중 서명 | ❌ 범위 밖 (에스크로 결재선에서 EIP-712 다중 승인으로 대신할 계획) |
@@ -38,7 +38,7 @@
 | 만료 증명 재사용 | `test_Fix_OldReportReplayRejected`, `test_Fix_ReportSignedLongAgoRejected` | `BAD_ROUND`, `REPORT_TOO_OLD` |
 | 서명 재전송 (다른 배포본) | `test_Fix_SignatureForOtherDeploymentRejected` | EIP-712 도메인 불일치로 거부 |
 | 서명 중복 · 가변성 | `test_Fix_DuplicateSignatureRejected`, `test_Fix_MalleableSignatureRejected` | `UNSORTED_OR_DUPLICATE`, `SIG_MALLEABLE` |
-| 단독 결재 우회 | — | ❌ 에스크로 미구현 |
+| 단독 결재 우회 | — | ➡️ [kgold-trade-escrow-lab](https://github.com/Andrewpark-hub/kgold-trade-escrow-lab) 의 `test_Fix_OneApproverTwiceRejected` |
 | 기한 경계 조건 | `test_Boundary_StalenessAtExactly24Hours` | 24시간째 허용, +1초 차단 (에스크로 기한은 미구현) |
 
 ## K-Gold 글에서 무너졌던 전제 3개 → 이번에 확인한 것
